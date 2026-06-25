@@ -1,0 +1,33 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended"
+  ],
+  "packageRules": [
+    {
+      "groupName": "caddy stack",
+      "matchManagers": [
+        "gomod",
+        "dockerfile"
+      ],
+      "matchPackageNames": [
+        "github.com/caddyserver/caddy/v2",
+        "github.com/lucaslorentz/caddy-docker-proxy/v2",
+        "github.com/caddy-dns/ovh",
+        "github.com/hslatman/caddy-crowdsec-bouncer",
+        "caddy"
+      ]
+    },
+    {
+      "matchManagers": [
+        "gomod",
+        "dockerfile"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "automerge": true
+    }
+  ]
+}
