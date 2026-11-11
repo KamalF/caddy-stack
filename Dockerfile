@@ -5,6 +5,6 @@ RUN go mod download
 COPY main.go ./
 RUN CGO_ENABLED=0 go build -trimpath -o /caddy .
 
-FROM caddy:2.11.4
+FROM caddy:2.11.9
 COPY --from=builder /caddy /usr/bin/caddy
 CMD ["caddy", "docker-proxy"]
